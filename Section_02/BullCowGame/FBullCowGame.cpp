@@ -1,4 +1,6 @@
 #include "stdafx.h"
+#pragma once
+
 #include "FBullCowGame.h"
 #include <map>
 

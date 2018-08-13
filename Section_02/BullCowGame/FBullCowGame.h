@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 
 using FString = std::string;
@@ -30,7 +31,7 @@ public:
 	bool IsGameWon() const;
 	EGuessStatus CheckGuessValidity(FString) const;
 
-	void Reset(); //TODO
+	void Reset();
 	FBullCowCount SubmitValidGuess(FString);
 
 private:
