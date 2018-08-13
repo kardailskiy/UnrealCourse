@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "FBullCowGame.h"
+#include <map>
+
+#define TMap std::map
 
 using int32 = int;
 
@@ -25,7 +28,7 @@ void FBullCowGame::Reset()
 
 EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
-	if (false)
+	if (!IsIsogram(Guess))
 	{
 		return EGuessStatus::Not_Isogram;
 	}
@@ -77,4 +80,18 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 	}
 
 	return BullCowCount;
+}
+
+bool FBullCowGame::IsIsogram(FString Word) const
+{
+	//если пустая строка или одна буква - изограмма true
+
+	//цикл по буквам слова
+		//если карта содержит букву
+			return false;
+		//иначе
+			//добавить букву в карту
+
+
+	return true;
 }
