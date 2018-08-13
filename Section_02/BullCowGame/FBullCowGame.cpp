@@ -47,7 +47,29 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 	}
 }
 
-FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
+FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 {
 	MyCurrentTry++;
+	FBullCowCount BullCowCount;
+	int32 WordLength = MyHiddenWord.length();
+
+	for (int32 MHWChar = 0; MHWChar < WordLength; MHWChar++)
+	{
+		for (int32 GChar = 0; GChar < WordLength; GChar++)
+		{
+			if (Guess[GChar] == MyHiddenWord[MHWChar])
+			{
+				if (MHWChar == GChar)
+				{
+					BullCowCount.Bulls++;
+				}
+				else
+				{
+					BullCowCount.Cows++;
+				}
+			}
+		}
+	}
+
+	return BullCowCount;
 }

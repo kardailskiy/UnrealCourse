@@ -32,7 +32,7 @@ public:
 	EGuessStatus CheckGuessValidity(FString) const;
 	
 	void Reset(); //TODO
-	FBullCowCount SubmitGuess(FString);
+	FBullCowCount SubmitValidGuess(FString);
 
 private:
 	int32 MyCurrentTry;
