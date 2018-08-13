@@ -84,14 +84,22 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 
 bool FBullCowGame::IsIsogram(FString Word) const
 {
-	//если пустая строка или одна буква - изограмма true
+	if (Word.length() <= 1) { return true; }
 
-	//цикл по буквам слова
-		//если карта содержит букву
+	TMap<char, bool> LetterSeen;
+
+	for (auto Letter : Word)
+	{
+		Letter = tolower(Letter);
+		if (LetterSeen[Letter])
+		{
 			return false;
-		//иначе
-			//добавить букву в карту
-
+		}
+		else
+		{
+			LetterSeen[Letter] = true;
+		}
+	}
 
 	return true;
 }
